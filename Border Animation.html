@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      height: 100vh;
+      background-color: cadetblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box{
+      position: relative;
+      height: 420px;
+      width: 320px;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .box::before{
+      content: '';
+      position: absolute;
+      height: 140%;
+      width: 180px;
+      background-color: white;
+      animation: box 5s linear infinite;
+    }
+    .box::after{
+      content: '';
+      position: absolute;
+      background-color: cadetblue;
+      inset: 10;
+      height: 400px;
+      width: 300px;
+      border-radius: 13px;
+    }
+    @keyframes box{
+      from{
+        transform: rotate(0);
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>
